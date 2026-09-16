@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>John Michael | Portfolio</title>
+
+
+    <style>
+
+        /* =========================
+           BASIC SETTINGS
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f1eb;
+            color: #292929;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            background-color: #222;
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav h2 {
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #d6a85f;
+        }
+
+
+        /* =========================
+           HOME
+        ========================= */
+
+        #home {
+            min-height: 90vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 60px 10%;
+            background-color: #eee8df;
+        }
+
+        .home-text {
+            max-width: 550px;
+        }
+
+        .home-text h1 {
+            font-size: 55px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .home-text h1 span {
+            color: #b08343;
+        }
+
+        .home-text p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #222;
+            color: white;
+            padding: 13px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #b08343;
+        }
+
+
+        /* =========================
+           PROFILE PICTURE
+        ========================= */
+
+        .home-image {
+            text-align: center;
+        }
+
+        .home-image img {
+            width: 320px;
+            height: 320px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 6px solid #b08343;
+
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+
+        /* =========================
+           GENERAL SECTION
+        ========================= */
+
+        section {
+            padding: 70px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 40px;
+        }
+
+        .section-title span {
+            color: #b08343;
+        }
+
+
+        /* =========================
+           GALLERY
+        ========================= */
+
+        .gallery {
+            display: grid;
+
+            grid-template-columns:
+            repeat(auto-fit, minmax(200px, 1fr));
+
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 230px;
+
+            object-fit: cover;
+
+            border-radius: 10px;
+
+            transition: 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+
+        /* =========================
+           CONTACTS
+        ========================= */
+
+        #contacts {
+            background-color: #292929;
+            color: white;
+        }
+
+        .contact-container {
+            text-align: center;
+        }
+
+        .contact-container p {
+            margin: 15px;
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           CARDS
+        ========================= */
+
+        .cards {
+            display: grid;
+
+            grid-template-columns:
+            repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 25px;
+        }
+
+        .card {
+            background-color: white;
+
+            padding: 30px;
+
+            text-align: center;
+
+            border-radius: 10px;
+
+            box-shadow:
+            0 4px 15px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #b08343;
+
+            margin-bottom: 15px;
+
+            font-size: 24px;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skill-bar {
+            background-color: #ddd;
+
+            height: 10px;
+
+            border-radius: 10px;
+
+            margin-top: 15px;
+
+            overflow: hidden;
+        }
+
+        .skill-level {
+            height: 100%;
+
+            background-color: #b08343;
+        }
+
+
+        /* =========================
+           CONTACT BUTTON
+        ========================= */
+
+        .contact-btn {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            padding: 12px 25px;
+
+            background-color: #b08343;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 5px;
+        }
+
+        .contact-btn:hover {
+            background-color: #8e672f;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background-color: #181818;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav h2 {
+                margin-bottom: 15px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+                font-size: 13px;
+            }
+
+            #home {
+                flex-direction: column;
+
+                text-align: center;
+
+                padding-top: 50px;
+            }
+
+            .home-text h1 {
+                font-size: 40px;
+            }
+
+            .home-text p {
+                font-size: 16px;
+            }
+
+            .home-image {
+                margin-top: 35px;
+            }
+
+            .home-image img {
+                width: 240px;
+                height: 240px;
+            }
+
+            section {
+                padding: 50px 7%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <h2>My Portfolio</h2>
+
+        <div>
+
+            <a href="#home">Home</a>
+
+            <a href="#gallery">Gallery</a>
+
+            <a href="#contacts">Contacts</a>
+
+            <a href="#journey">Journey</a>
+
+            <a href="#skills">Skills</a>
+
+            <a href="#hobbies">Hobbies</a>
+
+            <a href="#art">Art</a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================
+         HOME
+    ========================= -->
+
+    <section id="home">
+
+        <div class="home-text">
+
+            <h1>
+
+                Hi, I'm
+
+                <span>John Michael</span>
+
+            </h1>
+
+
+            <p>
+
+                Welcome to my personal portfolio website.
+
+                I am an Information Technology student
+                interested in programming, coding,
+                creativity, and technology.
+
+            </p>
+          
+
+
+            <a href="#gallery" class="btn">
+
+                Explore My Work
+
+            </a>
+
+        </div>
+<div class="profile">
+  <div class="profile-circle">
+    <div class="profile-icob">
+
+      
+    </div>
+  </div>
+</div>
+
+
+        <!-- PROFILE PICTURE -->
+
+        <div class="home-image">
+
+            <img
+                src="profile.png"
+                alt="John Michael Profile Picture">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         GALLERY
+    ========================= -->
+
+    <section id="gallery">
+
+        <h2 class="section-title">
+
+            My <span>Gallery</span>
+
+        </h2>
+
+
+        <div class="gallery">
+
+
+            <img
+                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80"
+                alt="Nature">
+
+
+            <img
+                src="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=600&q=80"
+                alt="Mountain">
+
+
+            <img
+                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80"
+                alt="Coffee">
+
+
+            <img
+                src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80"
+                alt="Beach">
+
+
+            <img
+                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80"
+                alt="Photography">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACTS
+    ========================= -->
+
+    <section id="contacts">
+
+        <h2 class="section-title">
+
+            My <span>Contacts</span>
+
+        </h2>
+
+
+        <div class="contact-container">
+
+            <p>
+                📧 Email:
+                johnmichael@example.com
+            </p>
+
+
+            <p>
+                📱 Phone:
+                +63 900 000 0000
+            </p>
+
+
+            <p>
+                📍 Location:
+                Philippines
+            </p>
+
+
+            <p>
+                Feel free to contact me
+                for questions or collaborations.
+            </p>
+
+
+            <a
+                href="mailto:johnmichael@example.com"
+                class="contact-btn">
+
+                Send Me an Email
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         JOURNEY
+    ========================= -->
+
+    <section id="journey">
+
+        <h2 class="section-title">
+
+            My <span>Journey</span>
+
+        </h2>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <h3>My Beginning</h3>
+
+                <p>
+
+                    My journey started when
+                    I became interested in computers,
+                    technology, and programming.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Education</h3>
+
+                <p>
+
+                    I continue to learn Information
+                    Technology, programming,
+                    web development, and other
+                    computer-related skills.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>My Goal</h3>
+
+                <p>
+
+                    My goal is to improve my skills,
+                    gain experience, and become
+                    a successful IT professional.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SKILLS
+    ========================= -->
+
+    <section id="skills">
+
+        <h2 class="section-title">
+
+            My <span>Skills</span>
+
+        </h2>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <h3>HTML</h3>
+
+                <p>
+
+                    Creating the structure
+                    of websites.
+
+                </p>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-level"
+                        style="width: 85%;">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>CSS</h3>
+
+                <p>
+
+                    Designing and styling
+                    websites.
+
+                </p>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-level"
+                        style="width: 75%;">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>JavaScript</h3>
+
+                <p>
+
+                    Adding interaction
+                    and functionality.
+
+                </p>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-level"
+                        style="width: 65%;">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>Programming</h3>
+
+                <p>
+
+                    Basic programming
+                    and problem solving.
+
+                </p>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-level"
+                        style="width: 70%;">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         HOBBIES
+    ========================= -->
+
+    <section id="hobbies">
+
+        <h2 class="section-title">
+
+            My <span>Hobbies</span>
+
+        </h2>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <h3>📷 Photography</h3>
+
+                <p>
+
+                    I enjoy taking pictures
+                    and capturing memorable moments.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>🎵 Music</h3>
+
+                <p>
+
+                    Listening to music helps me
+                    relax and stay inspired.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>🎮 Gaming</h3>
+
+                <p>
+
+                    I enjoy playing games
+                    during my free time.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>💻 Learning</h3>
+
+                <p>
+
+                    I enjoy learning new things
+                    about technology and programming.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ART
+    ========================= -->
+
+    <section id="art">
+
+        <h2 class="section-title">
+
+            My <span>Art</span>
+
+        </h2>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <h3>🎨 Digital Art</h3>
+
+                <p>
+
+                    I enjoy creating digital designs
+                    and creative artwork.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>✏️ Drawing</h3>
+
+                <p>
+
+                    Drawing allows me to express
+                    my ideas and imagination.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>💡 Creative Ideas</h3>
+
+                <p>
+
+                    Art gives me a way to express
+                    my creativity and unique ideas.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+
+            © 2026 John Michael's Portfolio.
+            All Rights Reserved.
+
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+
+        /* =========================
+           LET
+        ========================= */
+
+        let visitorName = "Guest";
+
+
+
+        /* =========================
+           CONST
+        ========================= */
+
+        const portfolioOwner = "John Michael";
+
+
+
+        /* =========================
+           FUNCTION
+        ========================= */
+
+        function welcomeMessage() {
+
+            alert(
+                "Welcome to " +
+                portfolioOwner +
+                "'s Portfolio!"
+            );
+
+        }
+
+
+
+        /* =========================
+           IF ELSE
+        ========================= */
+
+        function checkVisitor() {
+
+            if (visitorName === "Guest") {
+
+                console.log(
+                    "Welcome, Guest!"
+                );
+
+            }
+
+            else {
+
+                console.log(
+                    "Welcome, " +
+                    visitorName +
+                    "!"
+                );
+
+            }
+
+        }
+
+
+
+        /* =========================
+           FOR LOOP
+        ========================= */
+
+        function showSkills() {
+
+            const skills = [
+
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Programming"
+
+            ];
+
+
+            for (
+                let i = 0;
+                i < skills.length;
+                i++
+            ) {
+
+                console.log(
+
+                    "Skill " +
+                    (i + 1) +
+                    ": " +
+                    skills[i]
+
+                );
+
+            }
+
+        }
+
+
+
+        /* =========================
+           WHILE LOOP
+        ========================= */
+
+        function countGallery() {
+
+            const photos =
+                document.querySelectorAll(
+                    ".gallery img"
+                );
+
+
+            let number = 0;
+
+
+            while (
+                number < photos.length
+            ) {
+
+                number++;
+
+            }
+
+
+            console.log(
+
+                "Total Gallery Photos: " +
+                number
+
+            );
+
+        }
+
+
+
+        /* =========================
+           BUTTON FUNCTION
+        ========================= */
+
+        function changeWelcome() {
+
+            let message =
+                document.getElementById(
+                    "welcomeText"
+                );
+
+
+            if (message) {
+
+                message.innerHTML =
+                    "Thank you for visiting my portfolio!";
+
+            }
+
+        }
+
+
+
+        /* =========================
+           RUN FUNCTIONS
+        ========================= */
+
+        console.log(
+            "Portfolio Owner: " +
+            portfolioOwner
+        );
+
+
+        checkVisitor();
+
+        showSkills();
+
+        countGallery();
+
+
+    </script>
+
+
+</body>
+
+</html>
